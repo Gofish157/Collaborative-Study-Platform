@@ -1,13 +1,25 @@
 package com.studyplatform.server.models;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tasks")
+
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String title;
+    @Column(length = 1000)
     private String description;
+    @Column(nullable = false)
     private String status;
+    @Column(nullable = false)
     private String dedline;
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     public Task() {}

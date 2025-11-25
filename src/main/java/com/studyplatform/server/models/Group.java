@@ -1,12 +1,23 @@
 package com.studyplatform.server.models;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "groups")
+
 public class Group {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(length = 1000)
     private String description;
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
 

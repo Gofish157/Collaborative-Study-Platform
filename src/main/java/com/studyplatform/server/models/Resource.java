@@ -1,10 +1,20 @@
 package com.studyplatform.server.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "resources")
 public class Resource {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String title;
+    @Column(nullable = false)
     private String type;
+    @Column(name = "path_or_url", nullable = false)
     private String pathOrUrl;
+    @Column(name = "uploaded_at", nullable = false)
     private String uploadedAt;
 
     public Resource() { }
