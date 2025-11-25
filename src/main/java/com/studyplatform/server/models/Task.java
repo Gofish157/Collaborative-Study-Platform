@@ -17,20 +17,20 @@ public class Task {
     private Long groupId;
     @Column(length = 1000)
     private String description;
-    @Column(nullable = false)
+    @Column
     private String status;
-    @Column(nullable = false)
-    private String dedline;
+    @Column(nullable = true)
+    private String deadline;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     public Task() {}
 
-    public Task(String title, String description, String dedline, Long groupId){
+    public Task(String title, String description, String deadline, Long groupId){
         this.title = title;
         this.description = description;
         this.status = "pending";
-        this.dedline = dedline;
+        this.deadline = deadline;
         this.groupId = groupId;
         this.createdAt = LocalDateTime.now();
     }
@@ -50,8 +50,8 @@ public class Task {
     public Long getGroupId() { return groupId; }
     public void setGroupId(Long groupId) { this.groupId = groupId; }
 
-    public String getDedline() { return dedline; }
-    public void setDedline(String dedline) { this.dedline = dedline; }
+    public String getDeadline() { return deadline; }
+    public void setDeadline(String deadline) { this.deadline = deadline; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
