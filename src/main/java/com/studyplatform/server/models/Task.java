@@ -13,6 +13,8 @@ public class Task {
     private Long id;
     @Column(nullable = false)
     private String title;
+    @Column(name = "group_id", nullable = false)
+    private Long groupId;
     @Column(length = 1000)
     private String description;
     @Column(nullable = false)
@@ -24,11 +26,12 @@ public class Task {
 
     public Task() {}
 
-    public Task(String title, String description, String dedline) {
+    public Task(String title, String description, String dedline, Long groupId){
         this.title = title;
         this.description = description;
         this.status = "pending";
         this.dedline = dedline;
+        this.groupId = groupId;
         this.createdAt = LocalDateTime.now();
     }
 
@@ -43,6 +46,9 @@ public class Task {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public Long getGroupId() { return groupId; }
+    public void setGroupId(Long groupId) { this.groupId = groupId; }
 
     public String getDedline() { return dedline; }
     public void setDedline(String dedline) { this.dedline = dedline; }

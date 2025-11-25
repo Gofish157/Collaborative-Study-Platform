@@ -1,5 +1,5 @@
 package com.studyplatform.server.models;
-
+import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,11 +15,13 @@ public class Resource {
     @Column(name = "path_or_url", nullable = false)
     private String pathOrUrl;
     @Column(name = "uploaded_at", nullable = false)
-    private String uploadedAt;
+    private LocalDateTime uploadedAt;
+    @Column(name = "group_id", nullable = false)
+    private Long groupId;
 
     public Resource() { }
 
-    public Resource(String title, String type, String pathOrUrl, String uploadedAt) {
+    public Resource(String title, String type, String pathOrUrl, LocalDateTime uploadedAt) {
         this.title = title;
         this.type = type;
         this.pathOrUrl = pathOrUrl;
@@ -38,6 +40,6 @@ public class Resource {
     public String getPathOrUrl() { return pathOrUrl; }
     public void setPathOrUrl(String pathOrUrl) { this.pathOrUrl = pathOrUrl; }
 
-    public String getUploadedAt() { return uploadedAt; }
-    public void setUploadedAt(String uploadedAt) { this.uploadedAt = uploadedAt; }
+    public LocalDateTime getUploadedAt() { return uploadedAt; }
+    public void setUploadedAt(LocalDateTime uploadedAt) { this.uploadedAt = uploadedAt; }
 }
