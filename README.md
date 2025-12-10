@@ -1,49 +1,63 @@
 # Collaborative Study Platform
 
-A JavaFX + Spring Boot platform for collaborative student learning.  
-The application is designed as a hub for study groups: creating groups, managing members, and (in the next iterations) enabling real-time communication and file sharing.
+Collaborative Study Platform is a **web-based application** designed to help students organize learning materials, manage study content, and work with educational data in a structured way.
 
-## Features
+The project follows a classic **web-application architecture** with a Java backend and a separate frontend layer.
 
-Current / planned features:
-
-- JavaFX desktop client
-- Spring Boot backend
-- Persistence with a relational database (`study_platform.db`)
-- Study groups and users (under development)
-- Planned:
-  - Real-time group chat (WebSockets)
-  - File sharing inside groups
-  - Notifications for shared files and new messages
-  - Roles and permissions inside a group
+---
 
 ## Tech Stack
 
-**Backend**
+### Backend
+- **Java**
+- **Maven**
+- **Spring ecosystem** (Spring Boot / MVC)
+- Embedded database (for development)
 
-- Java
-- Spring Boot
-- Spring Data JPA / Hibernate
+### Frontend
+- **Web application** (HTML / CSS / JavaScript)
+- Separate frontend module
+- Built as a client-side interface for the backend API
 
-**Client**
+---
 
-- JavaFX desktop application
+## Features
 
-**Database**
+- Web-based user interface
+- Backend API built with Java and Maven
+- Persistent storage via embedded database
+- Modular separation between backend and frontend
+- Designed for further extension (authentication, roles, collaboration logic)
 
-- SQLite (`study_platform.db`) by default
+---
 
-## Project Structure (simplified)
+## Getting Started
 
-```text
-Collaborative-Study-Platform/
-├── pom.xml
-├── study_platform.db
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── ... (backend + JavaFX client packages)
-│       └── resources/
-│           ├── application.properties
-│           └── ...
-└── .idea/      # IDE configuration (not used at runtime)
+### Prerequisites
+- **Java 17+**
+- **Maven**
+
+---
+
+### Backend Setup
+
+bash:
+mvn clean install
+mvn spring-boot:run
+
+The backend application will start on the default Spring Boot port.
+
+### Frontend Setup
+cd frontend
+npm install
+npm run dev
+
+---
+
+### Development Notes
+
+The project is intended as a web application, not a desktop application.
+
+No WebSockets are currently used.
+
+The architecture allows easy future expansion (REST API extensions, authentication, real-time features if needed later).
