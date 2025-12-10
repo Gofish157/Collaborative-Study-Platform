@@ -23,8 +23,6 @@ Current / planned features:
 
 - Java
 - Spring Boot
-- Spring Web (REST)
-- Spring WebSocket (for real-time chat)
 - Spring Data JPA / Hibernate
 
 **Client**
