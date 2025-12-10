@@ -107,6 +107,8 @@ src/main/java/com/studyplatform/server
 
 
 ---
+
+
 ##Authentication & Security
 
 The server uses JWT-based authentication integrated with Spring Security.
